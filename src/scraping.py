@@ -19,8 +19,8 @@ def read_html(file_path: str, tag: str = 'div', id: str = '-post-rtjson-content'
     """
 
     with open(file_path, 'r') as f:
-        soup = BeautifulSoup(f, 'html.parser')
-    
+        soup = BeautifulSoup(f, 'html.parser', from_encoding='windows-1252')
+            
     results = soup.find_all(tag, id=id)
 
     comments = []
