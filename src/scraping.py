@@ -2,8 +2,12 @@
 Collection of functions to scrap and clean HTML files.
 """
 
+# Libraries importation
 from bs4 import BeautifulSoup
 import re
+
+
+# Functions
 
 def read_html(file_path: str, tag: str = 'div', id: str = '-post-rtjson-content') -> list[str]:
     """
