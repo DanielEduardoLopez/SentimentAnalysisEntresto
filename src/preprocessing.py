@@ -11,6 +11,7 @@ from nltk.tokenize import word_tokenize
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger_eng')
+nltk.download('wordnet')
 
 
 # Functions
@@ -53,3 +54,31 @@ def tokenize_text(text: str) -> list[str]:
     words = [word.lower() for word in words if word.isalpha() and word.lower() not in stop_words]
 
     return words
+
+
+def lemmatize(pos_text: list[tuple[str, str]]) -> str:
+    """
+    Get the lemma from a set of POS tagged text.
+
+    Parameters:
+    pos_text (list[tuple[str, str]]): POS tagget text.
+
+    Returns:
+    lemma_text (str): Lemmatized text.
+
+    """
+    lemmatizer = nltk.WordNetLemmatizer()
+
+    lemma_text = " "
+
+    for word, pos in pos_text:
+
+        if not pos:
+            lemma = word
+            lemma_text = lemma_text + " " + lemma
+
+        else:
+            lemma = lemmatizer.lemmatize(word, pos=pos)
+            lemma_text = lemma_text + " " + lemma
+
+    return lemma_text
