@@ -56,7 +56,7 @@ def tokenize_text(text: str) -> list[str]:
     return words
 
 
-def lemmatize(pos_text: list[tuple[str, str]]) -> str:
+def lemmatize_text(pos_text: list[tuple[str, str]]) -> str:
     """
     Get the lemma from a set of POS tagged text.
 
@@ -78,7 +78,7 @@ def lemmatize(pos_text: list[tuple[str, str]]) -> str:
             lemma_text = lemma_text + " " + lemma
 
         else:
-            lemma = lemmatizer.lemmatize(word, pos=pos)
+            lemma = lemmatizer.lemmatize(word)
             lemma_text = lemma_text + " " + lemma
 
     return lemma_text
