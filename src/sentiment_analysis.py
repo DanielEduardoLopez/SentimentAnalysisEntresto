@@ -69,3 +69,25 @@ def get_sentiment(polarity: float) -> str:
     
     else:
         return "Positive"
+
+
+def get_subjectivity_interpretation(subjectivity: float) -> str:
+    """
+    Returns the subjectivity interpretation of a given text based on the subjectivity score thereof as follows: 
+        0.0: Objective
+        1.0: Subjective
+
+    Parameters:
+    text (str): Input text.
+
+    Returns:
+    subjectivity (float): Polarity of the text within the range [-1.0, 1.0], where:
+
+
+    """
+
+    if subjectivity <= 0.5:
+        return "Objective"
+    
+    else:
+        return "Subjective"
