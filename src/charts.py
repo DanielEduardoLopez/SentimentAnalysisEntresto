@@ -59,13 +59,24 @@ def process_string(input_string: str) -> str:
 
     return output_string
 
+
 def return_color_list(data: pd.DataFrame, column: str) -> list:
     """
     Return a list of colors for a given column in a DataFrame, 
     with the first column being blue and the rest gray.
 
     Parameters:
+
+    data (pd.DataFrame): Input data.
+    column (str): Column name.
+
+    Returns:
+    color_list (list): List of colors.
     """
+    
+    color_list = [sns.color_palette('Blues')[-1] if i == 0 else 'gray' for i in range(len(data[column].unique()))]
+
+    return color_list
 
 
 def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, title: str) -> None:
@@ -87,7 +98,7 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     ax = sns.barplot(data, 
                     x=x, 
                     y=y, 
-                    palette=[sns.color_palette('Blues')[-1], 'gray','gray'], 
+                    palette=return_color_list(data, x),
                     alpha=0.7)
 
     # Adding data labels for each bar
@@ -100,6 +111,6 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.title(title)
-    plt.savefig('../reports/figures/fig_{title_adj}.png', bbox_inches = 'tight')
+    plt.savefig(f'../reports/figures/fig_{title_adj}.png', bbox_inches = 'tight')
     plt.show()
 
