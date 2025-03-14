@@ -74,7 +74,8 @@ def return_color_list(data: pd.DataFrame, column: str) -> list:
     color_list (list): List of colors.
     """
     
-    color_list = [sns.color_palette('Blues')[-1] if i == 0 else 'gray' for i in range(len(data[column].unique()))]
+    color_list = [sns.color_palette('Blues')[-1] if i == 0 else 'lightgray' for i in range(len(data[column].unique()))]
+    color_list.insert(1, 'gray')
 
     return color_list
 
@@ -114,3 +115,44 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     plt.savefig(f'../reports/figures/fig_{title_adj}.png', bbox_inches = 'tight')
     plt.show()
 
+
+def plot_donutchart(data: pd.DataFrame, x: str, y: str, title: str) -> None:
+    """
+    Plots and saves in disk a piechart with the data provided.
+
+    Parameters:
+    data (pd.DataFrame): Input data.
+    column (str): Column name for x axis.
+    title (str): Title of the chart.
+    
+    Returns:
+    None
+
+    """
+
+    fig, ax = plt.subplots(figsize = (8, 5))
+    colors = sns.color_palette('Blues_r')
+    wedges, texts, autotexts = ax.pie(x = data[y].values, 
+                                    #labels = count_by_sentiment.sentiment.values,
+                                    wedgeprops=dict(edgecolor='w', linewidth= 2, alpha=0.8),
+                                    textprops = dict(size=14, weight="bold"), 
+                                    colors = return_color_list(data, x), #[colors[0], 'gray', 'lightgray'], 
+                                    autopct='%.0f%%', 
+                                    pctdistance=1.15, 
+                                    startangle = 90, 
+                                    counterclock = False,                                   
+                                    #explode = [0.01, 0.01, 0.01]
+                                    )
+    center = plt.Circle( (0,0), 0.7, color='white')
+    p = plt.gcf()
+    p.gca().add_artist(center)
+    plt.legend(wedges, 
+                data[x].values, 
+                fontsize=13, 
+                #loc="center right", 
+                bbox_to_anchor=(1, 0, 0.3, 0.8)
+                )
+    plt.tight_layout()
+    title_adj = process_string(title)
+    plt.savefig(f'../reports/figures/fig_{title_adj}.png',  bbox_inches = 'tight')
+    plt.show()
