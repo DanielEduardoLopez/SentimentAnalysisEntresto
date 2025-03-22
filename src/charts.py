@@ -8,6 +8,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib_inline.backend_inline
 import seaborn as sns
+from wordcloud import WordCloud
 
 # Setting theme and plot resolution
 sns.set_theme(context = 'notebook', style = 'darkgrid')
@@ -88,6 +89,9 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     data (pd.DataFrame): Input data.
     x (str): Column name for x axis.
     y (str): Column name for y axis.
+    ylabel (str): Label for y axis.
+    xlabel (str): Label for x axis.
+    title (str): Chart title.
     
     Returns:
     None
@@ -123,7 +127,7 @@ def plot_donutchart(data: pd.DataFrame, x: str, y: str, title: str) -> None:
     Parameters:
     data (pd.DataFrame): Input data.
     column (str): Column name for x axis.
-    title (str): Title of the chart.
+    title (str): Chart title.
     
     Returns:
     None
@@ -155,4 +159,36 @@ def plot_donutchart(data: pd.DataFrame, x: str, y: str, title: str) -> None:
     plt.tight_layout()
     title_adj = process_string(title)
     plt.savefig(f'../reports/figures/fig_{title_adj}.png',  bbox_inches = 'tight')
+    plt.show()
+
+
+def plot_word_cloud(text: pd.Series, title: str) -> None:
+    """
+    Plots and saves into disk a Word Cloud from a Pandas series.
+
+    Parameters:
+    text (pd.series): Pandas series with text strings.
+    title (str): Chart title.
+
+    Returns:
+    None 
+
+    """
+
+    words_flatten = text.str.split().explode().tolist()
+
+    wordcloud = WordCloud(width = 3000, height = 1500,
+                        background_color ='white',
+                        #mask = maskArray,      
+                        #stopwords = stopwords,
+                        min_font_size = 10)
+    wordcloud.generate(' '.join(words_flatten))   
+
+    plt.figure(figsize = (10, 8)) 
+    plt.imshow(wordcloud) 
+    plt.axis("off") 
+    plt.tight_layout(pad = 0) 
+
+    title_adj = process_string(title)
+    plt.savefig(f'../reports/figures/fig_{title_adj}.png')
     plt.show()
