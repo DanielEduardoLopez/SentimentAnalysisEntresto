@@ -9,6 +9,10 @@ import matplotlib.pyplot as plt
 import matplotlib_inline.backend_inline
 import seaborn as sns
 from wordcloud import WordCloud
+import nltk
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
 
 # Setting theme and plot resolution
 sns.set_theme(context = 'notebook', style = 'darkgrid')
@@ -162,13 +166,14 @@ def plot_donutchart(data: pd.DataFrame, x: str, y: str, title: str) -> None:
     plt.show()
 
 
-def plot_word_cloud(text: pd.Series, title: str) -> None:
+def plot_word_cloud(text: pd.Series, title: str, remove_stopwords: bool = False) -> None:
     """
     Plots and saves into disk a Word Cloud from a Pandas series.
 
     Parameters:
     text (pd.series): Pandas series with text strings.
     title (str): Chart title.
+    remove_stopwords (bool): Flag to remove or not the stop words from the output word cloud.
 
     Returns:
     None 
@@ -176,13 +181,22 @@ def plot_word_cloud(text: pd.Series, title: str) -> None:
     """
 
     words_flatten = text.str.split().explode().tolist()
+    all_text = ' '.join(words_flatten)
 
-    wordcloud = WordCloud(width = 3000, height = 1500,
-                        background_color ='white',
-                        #mask = maskArray,      
-                        #stopwords = stopwords,
-                        min_font_size = 10)
-    wordcloud.generate(' '.join(words_flatten))   
+    if remove_stopwords:
+        wordcloud = WordCloud(width = 3000, height = 1500,
+                            background_color ='white',
+                            #mask = maskArray,      
+                            stopwords = stopwords.words('english'),
+                            min_font_size = 10)
+
+    else:
+        wordcloud = WordCloud(width = 3000, height = 1500,
+                            background_color ='white',
+                            #mask = maskArray,                                  
+                            min_font_size = 10)
+    
+    wordcloud.generate(all_text)
 
     plt.figure(figsize = (10, 8)) 
     plt.imshow(wordcloud) 
