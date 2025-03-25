@@ -13,12 +13,14 @@ def read_html(file_path: str, tag: str = 'div', id: str = '-post-rtjson-content'
     """
     Read and parses a local HTML file and returns a list of comments according to the indicated tags and ids.
 
-    Parameters
+    Parameters:
+    ----------
     file_path (str): Path of the local HTML file.
-    tag (str): Tag of the element of interest in the HTML file.
-    id (str): ID of the element of interest in the HTML file.
+    tag (str) (default='div'): HTML tag used to locate elements of interest in the HTML file.
+    id (str) (default='-post-rtjson-content'): HTML ID used to locate elements of interest in the HTML file.
 
-    Returns
+    Returns:
+    -------
     comments (list[str]): List of the retrieved elements.
     """
 
@@ -38,12 +40,15 @@ def remove_html_tags(input_list_str: list[str]) ->list[str]:
     """
     Returns strings with HTML tags removed.
     
-    Parameters
+    Parameters:
+    ----------
     input_list_str (list[str]): Input list of strings
 
-    Returns
+    Returns:
+    -------
     list_str_html_tags_removed (list[str]): List of strings with HTML tags removed.
     """
+    
     list_str_html_tags_removed = []
 
     for str in input_list_str:
