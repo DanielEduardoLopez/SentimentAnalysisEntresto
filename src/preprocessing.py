@@ -22,9 +22,11 @@ def clean_text(text: str) -> str:
     spaces at the beginning and at the end of the string.  
 
     Parameters:
+    ----------
     text (str): Input string.
 
     Returns:
+    -------
     text_cleaned (str): Processed string.
 
     """
@@ -40,9 +42,11 @@ def tokenize_text(text: str) -> list[str]:
     Tokenize input text and returns a list of words in lower case with only alphabetical characters and without stop words.
 
     Parameters:
+    ----------
     text (str): Input text.
 
     Returns:
+    -------
     words (list[str]): List of words in lower case with only alphabetical characters and without stop words.
 
     """
@@ -61,12 +65,15 @@ def lemmatize_text(pos_text: list[tuple[str, str]]) -> str:
     Get the lemma from a set of POS tagged text.
 
     Parameters:
+    ----------
     pos_text (list[tuple[str, str]]): POS tagget text.
 
     Returns:
+    -------
     lemma_text (str): Lemmatized text.
 
     """
+    
     lemmatizer = nltk.WordNetLemmatizer()
 
     lemma_text = " "
