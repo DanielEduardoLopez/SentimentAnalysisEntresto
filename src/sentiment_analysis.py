@@ -14,9 +14,11 @@ def get_polarity(text: str) -> float:
         1.0: Positive
 
     Parameters:
+    ----------
     text (str): Input text.
 
     Returns:
+    -------
     polarity (float): Polarity of the text within the range [-1.0, 1.0].
 
     """
@@ -33,11 +35,12 @@ def get_subjectivity(text: str) -> float:
         1.0: Subjective
 
     Parameters:
+    ----------
     text (str): Input text.
 
     Returns:
+    -------
     subjectivity (float): Polarity of the text within the range [-1.0, 1.0], where:
-
 
     """
 
@@ -54,9 +57,11 @@ def get_sentiment(polarity: float) -> str:
         Positive: polarity > 0
 
     Parameters:
+    ----------
     polarity (float): Score within a range [-1.0, 1.0] obtained.
 
     Returns:
+    -------
     sentiment (str): Interpretation of polarity score.
 
     """
@@ -78,16 +83,19 @@ def get_objectiveness(subjectivity: float) -> str:
         1.0: Subjective
 
     Parameters:
+    ----------
     subjectivity (float): Polarity of the text within the range [-1.0, 1.0]
 
     Returns:
+    -------
     objectiveness (str): Interpretation of subjectivity score.
-
 
     """
 
     if subjectivity <= 0.5:
-        return "Objective"
+        objectiveness = "Objective"
     
     else:
-        return "Subjective"
+        objectiveness = "Subjective"
+    
+    return objectiveness
