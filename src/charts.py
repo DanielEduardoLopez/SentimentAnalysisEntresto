@@ -43,9 +43,11 @@ def process_string(input_string: str) -> str:
     Process an input string to conver it to lowercase, remove blank spaces and punctuation signs.
 
     Parameters:
+    ----------
     input_string (str): Raw string.    
 
     Returns:
+    -------
     output_string (str): Processed string.
     """
 
@@ -71,11 +73,12 @@ def return_color_list(data: pd.DataFrame, column: str) -> list:
     with the first column being blue and the rest gray.
 
     Parameters:
-
+    ----------
     data (pd.DataFrame): Input data.
     column (str): Column name.
 
     Returns:
+    -------
     color_list (list): List of colors.
     """
     
@@ -90,6 +93,7 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     Plots and saves in disk a barchart with the data provided.
 
     Parameters:
+    ----------
     data (pd.DataFrame): Input data.
     x (str): Column name for x axis.
     y (str): Column name for y axis.
@@ -98,6 +102,7 @@ def plot_barchart(data: pd.DataFrame, x: str, y: str, ylabel: str, xlabel: str, 
     title (str): Chart title.
     
     Returns:
+    -------
     None
 
     """
@@ -129,11 +134,13 @@ def plot_donutchart(data: pd.DataFrame, x: str, y: str, title: str) -> None:
     Plots and saves in disk a piechart with the data provided.
 
     Parameters:
+    ----------
     data (pd.DataFrame): Input data.
     column (str): Column name for x axis.
     title (str): Chart title.
     
     Returns:
+    -------
     None
 
     """
@@ -171,11 +178,13 @@ def plot_word_cloud(text: pd.Series, title: str, remove_stopwords: bool = False)
     Plots and saves into disk a Word Cloud from a Pandas series.
 
     Parameters:
-    text (pd.series): Pandas series with text strings.
+    ----------
+    text (pd.series): Pandas series with processed text strings.
     title (str): Chart title.
-    remove_stopwords (bool): Flag to remove or not the stop words from the output word cloud.
+    remove_stopwords (bool) (default=False): Flag to remove or not stop words in English.
 
     Returns:
+    -------
     None 
 
     """
