@@ -7,7 +7,7 @@
 
 <font size="-1"><a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a> | <a href="https://github.com/DanielEduardoLopez">GitHub </a></font>
 
-**2 Apr 2025**
+**1 Apr 2025**
 
 ____
 ### **Contents**
@@ -86,16 +86,40 @@ ___
 ## **6. Results**
 
 ### **6.1 Data Collection** <a class="anchor" id="collection"></a>
+Data was collected on October 20, 2024, from <a href="https://www.reddit.com/">Reddit</a>, under the thread *"Entresto -- your experience"*. To recover the whole page with users comments, the extension <a href="https://github.com/gildas-lormeau/SingleFile">SingleFile</a> was used on a Mozilla FireFox web browser.
 
-
-### **6.2 Data Exploration** <a class="anchor" id="exploration"></a>
-
+### **6.2 Data Understanding** <a class="anchor" id="exploration"></a>
+The sample dataset was explored to identify its basic text statistics and assess its quality. To do so, it was explored the format and quantity of data, the number of comments, the length of comments, the distribution of comments length, the number of words, the number of unique words, the distribution of words count, the most common words, and the number of missing and duplicated values.
 
 ### **6.3 Data Preparation** <a class="anchor" id="preparation"></a>
-
+The text was preprocessed to remove non-alphabetical characters (like special characters and numbers), tokenize words, remove stop words, add POS tagging, remove stopwords, and obtaining of the lemma, or dictionary form, of a word.
 
 ### **6.4 Exploratory Data Analysis** <a class="anchor" id="eda"></a>
+Then, the processed text was analized to explore its general features.
 
+A summary is shown in the table below:
+
+| Feature | Value |
+| :----: | :----: |
+| Comments count | 19 |
+| Avg comments length | 418 |
+| Median comments length | 111 |
+| Words count | 1178 |
+| Unique words count | 649 |
+
+The 20 most frequent words are shown below:
+
+<p align="center">
+	<img src="reports/figures/fig_top_20_most_frequent_words.png?raw=true" width=70% height=60%>
+</p>
+
+On the other hand, the distribution of words is shown in the plot below:
+
+<p align="center">
+	<img src="reports/figures/fig_words_distribution.png?raw=true" width=70% height=60%>
+</p>
+
+Thus, according to the plot above, most of the words in the comments appear up to 4 times; where the most mentioned word -Entresto-, appeared 17 times.
 
 ### **6.5 Modeling** <a class="anchor" id="modeling"></a>
 
