@@ -122,28 +122,103 @@ On the other hand, the distribution of words is shown in the plot below:
 Thus, according to the plot above, most of the words in the comments appear up to 4 times; where the most mentioned word -Entresto-, appeared 17 times.
 
 ### **6.5 Modeling** <a class="anchor" id="modeling"></a>
+The sentiment analysis was performed on the prepared comments using the library *TextBlob* in order to get two measures from each comment:
 
+1. **Polarity**: Float number within the range [-1.0, 1.0], which represents the how positive (1.0) or negative (-1.0) a comment is.
+2. **Subjectivity**: Float number within the range [0.0, 1.0], where 0.0 is very objective and 1.0 is very subjective.
+
+Processed dataset can be found <a href="https://github.com/DanielEduardoLopez/SentimentAnalysisEntresto/blob/main/data/processed/processed_data.csv">here</a>.
 
 ### **6.6 Evaluation** <a class="anchor" id="evaluation"></a>
-
+In this section, the results of the sentiment analysis were evaluated to answer the research question.
 
 #### **6.6.1 Average Sentiment** <a class="anchor" id="avg_sentiment"></a>
+The average polarity score for all comments was calculated to estimate the average sentiment:
 
+```bash
+0.0937
+```
+So, the overall sentiment of all the comments is **Positive**.
 
 #### **6.6.2 Comments Count And Proportion by Sentiment** <a class="anchor" id="count_by_sentiment"></a>
+
+The number of positive, neutral, and negative comments was assessed as follows:
+
+<p align="center">
+	<img src="reports/figures/fig_total_comments_by_sentiment.png?raw=true" width=70% height=60%>
+</p>
+
+<p align="center">
+	<img src="reports/figures/fig_comments_percentage_by_sentiment.png?raw=true" width=70% height=60%>
+</p>
+
+So, most of the comments were positive (68%), with only a few portion of them being negative (21%.)
 
 
 #### **6.6.3 Average Objectiveness** <a class="anchor" id="avg_subjectivity"></a>
 
+The overall average objectiveness is as follows:
+
+```bash
+0.402
+```
+
+So, the overall objectiveness of all the comments was **Objective**.
+
 
 #### **6.6.4 Comments Count And Proportion by Objectiveness** <a class="anchor" id="count_by_objectiveness"></a>
 
+The number of objective and subjective comments was assessed as follows:
+
+<p align="center">
+	<img src="reports/figures/fig_total_comments_by_objectiveness.png?raw=true" width=70% height=60%>
+</p>
+
+<p align="center">
+	<img src="reports/figures/fig_comments_percentage_by_objectiveness.png?raw=true" width=70% height=60%>
+</p>
+
+So, most of the comments were deemed objective (68%); whereas only a few portion of them were classified as subjective (32%.)
 
 #### **6.6.5 Most Frequent Words for Positive and Negative Comments** <a class="anchor" id="words_positive_negative"></a>
 
+In this section, word clouds were created to assess which words were the most frequent for both positive and negative comments.
+
+The word cloud from positive comments is shown below:
+
+<p align="center">
+	<img src="reports/figures/fig_word_cloud_from_positive_comments.png?raw=true" width=70% height=60%>
+</p>
+
+Word cloud from positive comments suggested that: (1) Dosification schema is appreciated by patients, (2) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (3) The drug is effective to reduce heart risk.
+
+On the other hand, the word cloud from negative comments is shown below:
+
+<p align="center">
+	<img src="reports/figures/fig_word_cloud_from_negative_comments.png?raw=true" width=70% height=60%>
+</p>
+
+On the other hand, the word cloud from negative comments suggested that the cost of the drug could be too high.
 
 #### **6.6.6 Most Frequent Words for Objective and Subjective Comments** <a class="anchor" id="words_objective_subjective"></a>
 
+Likwise, word clouds were created to assess which words were the most frequent for both objective and subjective comments.
+
+The word cloud from objective comments is shown below:
+
+<p align="center">
+	<img src="reports/figures/fig_word_cloud_from_objective_comments.png?raw=true" width=70% height=60%>
+</p>
+
+Word cloud from objective comments suggested that: (1) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (2) The drug is effective to reduce heart failure.
+
+On the other hand, the word cloud from subjective comments is shown below:
+
+<p align="center">
+	<img src="reports/figures/fig_word_cloud_from_subjective_comments.png?raw=true" width=70% height=60%>
+</p>
+
+On the other hand, the word cloud from subjective comments refered to personal experiences from the patients when using the medicine, with no clear insight.
 
 ____
 <a class="anchor" id="conclusions"></a>
