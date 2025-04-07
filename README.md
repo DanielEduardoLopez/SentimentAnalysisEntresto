@@ -187,7 +187,7 @@ In this section, word clouds were created to assess which words were the most fr
 The word cloud from positive comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_positive_comments.png?raw=true" width=70% height=60%>
+	<img src="reports/figures/fig_word_cloud_from_positive_comments.png?raw=true" width=70% height=40%>
 </p>
 
 Word cloud from positive comments suggested that: (1) Dosification schema is appreciated by patients, (2) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (3) The drug is effective to reduce heart risk.
@@ -195,7 +195,7 @@ Word cloud from positive comments suggested that: (1) Dosification schema is app
 On the other hand, the word cloud from negative comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_negative_comments.png?raw=true" width=70% height=60%>
+	<img src="reports/figures/fig_word_cloud_from_negative_comments.png?raw=true" width=70% height=40%>
 </p>
 
 On the other hand, the word cloud from negative comments suggested that the cost of the drug could be too high.
@@ -207,7 +207,7 @@ Likwise, word clouds were created to assess which words were the most frequent f
 The word cloud from objective comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_objective_comments.png?raw=true" width=70% height=60%>
+	<img src="reports/figures/fig_word_cloud_from_objective_comments.png?raw=true" width=70% height=40%>
 </p>
 
 Word cloud from objective comments suggested that: (1) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (2) The drug is effective to reduce heart failure.
@@ -215,7 +215,7 @@ Word cloud from objective comments suggested that: (1) Copay program is useful f
 On the other hand, the word cloud from subjective comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_subjective_comments.png?raw=true" width=70% height=60%>
+	<img src="reports/figures/fig_word_cloud_from_subjective_comments.png?raw=true" width=70% height=40%>
 </p>
 
 On the other hand, the word cloud from subjective comments refered to personal experiences from the patients when using the medicine, with no clear insight.
@@ -224,12 +224,26 @@ ____
 <a class="anchor" id="conclusions"></a>
 ### **8. Conclusions**
 
+From the sample of social media about Entresto&trade;, 58% of the patient opinions ($n=19$) were **positive**, against 21% of negative opinions. On the other hand, from those opinions, 68% were deemed as **objective**.
+
+Analysis from the positive and the objective comments suggested that the **dosification schema** and the **copay** program for Entresto&trade; were appreciated by patients; as well as its **effectiveness** to reduce heart failure. Whereas, negative comments pointed out to the **high cost** of the drug.
+
+Thus, overall, the results from the present study indicated that the experiences of the patients with the medicine were **satisfactory**.
 
 ____
 <a class="anchor" id="references"></a>
 ### **9. References**
 
+* <a class="anchor" id="bing"></a>**Bing, L. (2015).** *Sentiment analysis: mining opinions, sentiments, and emotions*. Cambridge University Press.
+* <a class="anchor" id="chapman"></a>**Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., & Wirth, R. (2000)**. *CRISP-DM 1.0: Step-by-step data mining guide*. CRISP-DM consortium. https://api.semanticscholar.org/CorpusID:59777418
+* <a class="anchor" id="ema"></a>**European Medicines Agency (2023).** *Entresto (sacubitril / valsartan)*. https://www.ema.europa.eu/en/documents/overview/entresto-epar-summary-public_en.pdf
+* <a class="anchor" id="medhat"></a>**Medhat, W., Hassan, A. & Korashy, H. (2014).** Sentiment analysis algorithms and applications:
+A survey. *Ain Shams Engineering Journal*. 5: 1093-1113. http://dx.doi.org/10.1016/j.asej.2014.04.011 
+* <a class="anchor" id="rogel"></a>**Rogel-Salazar, J. (2020).** *Advanced Data Science and Analytics with Python*. CRC Press.
+* <a class="anchor" id="rollins"></a> **Rollins, J. B. (2015)**. *Foundational Methodology for Data Science*. Somers: IBM Corporation. https://tdwi.org/~/media/64511A895D86457E964174EDC5C4C7B1.PDF
+* <a class="anchor" id="turki"></a> **Turki Khemakhem, I., Jamoussi, S., & Ben Hamadou, A. (2016).** POS Tagging without a Tagger: Using Aligned Corpora for Transferring Knowledge to Under-Resourced Languages. *Computación y Sistemas*, 20(4), 667-679. https://doi.org/10.13053/cys-20-4-2430
 
 ____
 <a class="anchor" id="files"></a>
 ### **10. Description of Files in Repository**
+
