@@ -187,7 +187,7 @@ In this section, word clouds were created to assess which words were the most fr
 The word cloud from positive comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_positive_comments.png?raw=true" width=70% height=40%>
+	<img src="reports/figures/fig_word_cloud_from_positive_comments.png?raw=true" width=70% height=30%>
 </p>
 
 Word cloud from positive comments suggested that: (1) Dosification schema is appreciated by patients, (2) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (3) The drug is effective to reduce heart risk.
@@ -195,7 +195,7 @@ Word cloud from positive comments suggested that: (1) Dosification schema is app
 On the other hand, the word cloud from negative comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_negative_comments.png?raw=true" width=70% height=40%>
+	<img src="reports/figures/fig_word_cloud_from_negative_comments.png?raw=true" width=70% height=30%>
 </p>
 
 On the other hand, the word cloud from negative comments suggested that the cost of the drug could be too high.
@@ -207,7 +207,7 @@ Likwise, word clouds were created to assess which words were the most frequent f
 The word cloud from objective comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_objective_comments.png?raw=true" width=70% height=40%>
+	<img src="reports/figures/fig_word_cloud_from_objective_comments.png?raw=true" width=70% height=30%>
 </p>
 
 Word cloud from objective comments suggested that: (1) Copay program is useful for patients to reduce the economic burden of getting the medicine, and (2) The drug is effective to reduce heart failure.
@@ -215,7 +215,7 @@ Word cloud from objective comments suggested that: (1) Copay program is useful f
 On the other hand, the word cloud from subjective comments is shown below:
 
 <p align="center">
-	<img src="reports/figures/fig_word_cloud_from_subjective_comments.png?raw=true" width=70% height=40%>
+	<img src="reports/figures/fig_word_cloud_from_subjective_comments.png?raw=true" width=70% height=30%>
 </p>
 
 On the other hand, the word cloud from subjective comments refered to personal experiences from the patients when using the medicine, with no clear insight.
@@ -258,3 +258,5 @@ Path | File name | Description
 ./src/ | preprocessing.py | Python library for processing text data
 ./src/ | scraping.py | Python library for performing web scraping
 ./src/ | sentiment_analysis.py | Python library for performing sentiment analysis
+. | README.md | README File
+. | requirements.txt |  Python requirements file
