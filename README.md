@@ -247,3 +247,14 @@ ____
 <a class="anchor" id="files"></a>
 ### **10. Description of Files in Repository**
 
+Path | File name | Description
+:----: | :----: | :----:
+./data/raw/ | raw_data.html |  Raw dataset extracted from Reddit
+./data/processed/ | processed_data.csv | Processed dataset
+./notebooks/ | SentimentAnalysisEntresto.ipynb | Jupyter notebook with the project's code
+./references/ | Header.png | Header of the README file
+./reports/ | SentimentAnalysisEntresto.html | Report in HTML version
+./src/ | charts.py | Python library for plotting charts
+./src/ | preprocessing.py | Python library for processing text data
+./src/ | scraping.py | Python library for performing web scraping
+./src/ | sentiment_analysis.py | Python library for performing sentiment analysis
